@@ -18,8 +18,16 @@ struct ShareTheBillApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            TabView{
                 CalculationView(history: $history)
+                    .tabItem {
+                        Text("Calculate")
+                    }
+                
+                HistoryView(history: $history)
+                    .tabItem {
+                        Text("Review")
+                    }
             }
         }
     }
